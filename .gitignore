@@ -6,6 +6,7 @@ __pycache__/
 # R
 .Rhistory
 .RData
+Rplots.pdf
 .Rproj.user/
 
 
