@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+
+# VS Code
+.vscode/
+
+
+# Archivos temporales
+*.tmp
+*.log
