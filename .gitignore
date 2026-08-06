@@ -17,3 +17,6 @@ Rplots.pdf
 # Archivos temporales
 *.tmp
 *.log
+
+# Graficos generados
+graficos/
