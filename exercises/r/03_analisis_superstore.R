@@ -21,11 +21,11 @@ ventas <- read_csv(
 
 cat("\nVentas por categoría\n")
 
-ventas_categoria <- ventas %>%
-  group_by(Category) %>%
+ventas_categoria <- ventas |>
+  group_by(Category) |>
   summarise(
     Total_Sales = sum(Sales)
-  ) %>%
+  ) |>
   arrange(desc(Total_Sales))
 
 
@@ -38,11 +38,11 @@ print(ventas_categoria)
 
 cat("\nGanancia por región\n")
 
-ganancia_region <- ventas %>%
-  group_by(Region) %>%
+ganancia_region <- ventas |>
+  group_by(Region) |>
   summarise(
     Total_Profit = sum(Profit)
-  ) %>%
+  ) |>
   arrange(desc(Total_Profit))
 
 
@@ -56,12 +56,12 @@ print(ganancia_region)
 
 cat("\nTop 10 productos\n")
 
-top_productos <- ventas %>%
-  group_by(`Product Name`) %>%
+top_productos <- ventas |>
+  group_by(`Product Name`) |>
   summarise(
     Total_Sales = sum(Sales)
-  ) %>%
-  arrange(desc(Total_Sales)) %>%
+  ) |>
+  arrange(desc(Total_Sales)) |>
   head(10)
 
 
@@ -75,12 +75,12 @@ print(top_productos)
 
 cat("\nTop 10 clientes\n")
 
-top_clientes <- ventas %>%
-  group_by(`Customer Name`) %>%
+top_clientes <- ventas |>
+  group_by(`Customer Name`) |>
   summarise(
     Total_Sales = sum(Sales)
-  ) %>%
-  arrange(desc(Total_Sales)) %>%
+  ) |>
+  arrange(desc(Total_Sales)) |>
   head(10)
 
 
