@@ -7,7 +7,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
 # Cargar datos
 
 ventas = pd.read_csv(
@@ -16,13 +15,15 @@ ventas = pd.read_csv(
 )
 
 
+ventas.columns = ventas.columns.str.lower().str.replace(" ", "_").str.replace("-", "_")
+ventas.to_csv("datasets/superstore.csv", index=False) 
 # =====================================================
 # 1. Ventas por categoría
 # =====================================================
 
 ventas_categoria = (
     ventas
-    .groupby("Category")["Sales"]
+    .groupby("category")["sales"]
     .sum()
     .reset_index()
 )
@@ -32,8 +33,8 @@ plt.figure(figsize=(8,5))
 
 sns.barplot(
     data=ventas_categoria,
-    x="Category",
-    y="Sales"
+    x="category",
+    y="sales"
 )
 
 plt.title(
@@ -61,7 +62,7 @@ plt.show()
 
 ganancia_region = (
     ventas
-    .groupby("Region")["Profit"]
+    .groupby("region")["profit"]
     .sum()
     .reset_index()
 )
@@ -71,8 +72,8 @@ plt.figure(figsize=(8,5))
 
 sns.barplot(
     data=ganancia_region,
-    x="Region",
-    y="Profit"
+    x="region",
+    y="profit"
 )
 
 plt.title(
@@ -100,9 +101,9 @@ plt.figure(figsize=(8,5))
 
 sns.scatterplot(
     data=ventas,
-    x="Sales",
-    y="Profit",
-    hue="Category"
+    x="sales",
+    y="profit",
+    hue="category"
 )
 
 
