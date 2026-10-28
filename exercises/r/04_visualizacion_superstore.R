@@ -25,8 +25,8 @@ ventas <- read_csv(
 # 1. Ventas por categoría
 # =====================================================
 
-ventas_categoria <- ventas %>%
-  group_by(Category) %>%
+ventas_categoria <- ventas |>
+  group_by(Category) |>
   summarise(
     Total_Sales = sum(Sales)
   )
@@ -57,13 +57,12 @@ ggsave(
 )
 
 
-
 # =====================================================
 # 2. Ganancia por región
 # =====================================================
 
-ganancia_region <- ventas %>%
-  group_by(Region) %>%
+ganancia_region <- ventas |>
+  group_by(Region) |>
   summarise(
     Total_Profit = sum(Profit)
   )
@@ -93,7 +92,6 @@ ggsave(
   width = 8,
   height = 5
 )
-
 
 
 # =====================================================
