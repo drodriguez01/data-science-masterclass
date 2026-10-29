@@ -14,9 +14,6 @@ ventas = pd.read_csv(
     encoding="latin-1"
 )
 
-
-ventas.columns = ventas.columns.str.lower().str.replace(" ", "_").str.replace("-", "_")
-ventas.to_csv("datasets/superstore.csv", index=False) 
 # =====================================================
 # 1. Ventas por categoría
 # =====================================================

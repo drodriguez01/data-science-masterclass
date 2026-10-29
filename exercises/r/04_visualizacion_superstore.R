@@ -26,7 +26,7 @@ ventas <- read_csv(
 # =====================================================
 
 ventas_categoria <- ventas |>
-  group_by(Category) |>
+  group_by(category) |>
   summarise(
     Total_Sales = sum(Sales)
   )
