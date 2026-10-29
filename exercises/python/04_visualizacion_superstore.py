@@ -7,7 +7,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
 # Cargar datos
 
 ventas = pd.read_csv(
@@ -16,6 +15,8 @@ ventas = pd.read_csv(
 )
 
 
+ventas.columns = ventas.columns.str.lower().str.replace(" ", "_").str.replace("-", "_")
+ventas.to_csv("datasets/superstore.csv", index=False) 
 # =====================================================
 # 1. Ventas por categoría
 # =====================================================
