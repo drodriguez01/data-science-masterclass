@@ -12,8 +12,10 @@ print(names(ventas))
 colnames(ventas) <- str_replace_all(colnames(ventas), " ", "_")
 colnames(ventas) <- str_replace_all(colnames(ventas), "-", "_")
 colnames(ventas) <- tolower(colnames(ventas))
-
 print(names(ventas))
+# Exportar dataset limpio (datos detallados a nivel de transacción)
+write_csv(ventas, "datasets/superstore_clean.csv")
+
 
 ventas_categoria <- ventas |>
   group_by(category) |>

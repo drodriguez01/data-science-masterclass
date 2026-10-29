@@ -63,7 +63,7 @@ grafico_cat <- ggplot(
     )
   )
 
-# print(grafico_cat)
+#  print(grafico_cat)
 
 top_subcat <- ventas |>
   group_by(sub_category) |>
@@ -117,7 +117,7 @@ grafico_region_pro <- ggplot(
     subtitle = "Comparativa de la contribución real a la utilidad operacional", x = "Región", # nolint: line_length_linter.
     y = "Ganancia Neta (USD)"
   ) +
-  theme_minimal()
+  theme_clasical()
 # print(grafico_region_pro)
 
 # Crear gráfico circular
@@ -243,4 +243,4 @@ dashboard <- (grafico_cat + grafico_region_pro) /
     )
   )
 
-print(dashboard)
+# print(dashboard)
